@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}URL for {% if code %}"{{ code }}"{% endif %}{% endblock %}
+
+{% block main %}
+<style>
+  body {
+    background-image: url('static/index.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+</style>
+
+  <div class="container text-center">
+  <h1 class="jumbotron-heading">Encrypted word created:</h1>
+  <input class="lead" id="new_code" value="{{ code }}" readonly>
+  <p>
+    <button onclick="myFunction()" class="btn btn-primary my-2">Copy Word</button>
+
+
+  </p>
+  <p>copy the encrypted message and sent it to the reciver.we already email password to them</p>
+  <div class="container text-center">
+    <p>
+      <a href="{{ url_for('index') }}"><button class="btn btn-primary my-2">Home</button></a>
+    </p>
+  </div>
+</div>
+
+
+
+<script>
+  function myFunction() {
+    var copyText = document.getElementById("new_code");
+    copyText.select();
+    document.execCommand("copy");
+  }
+</script>
+
+{% endblock %}

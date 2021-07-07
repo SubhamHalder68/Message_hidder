@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}MESSAGE HIDING{% endblock %}
+
+{% block main %}
+
+
+<style>
+    body {
+      background-image: url('static/bg.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+</style>
+<h1>Welcome</h1>
+<h2>What you want to do? Please choose from below!</h2>
+<!--style for image-->
+<style>
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+</style>
+<!--Encryption link-->
+<div class="center"><img style="width: 30%;" src="static/Encrypt.jpg" alt="Encrypt_image" />
+<div class="centered">
+    <a href="{{ url_for('enc') }}" target="_blank" rel="noopener">
+    <p style="text-align:center">Encrypt Message   
+    </p>
+    </a></div>
+</div>
+<!--Decryption link-->
+<div class="center"><img style="width: 30%;" src="static/Decrypt.jpg" alt="Decrypt_image" />
+<div class="centered">
+    <a href="{{ url_for('decrypt') }}" target="_blank" rel="noopener">
+    <p style="text-align:center">Decrypt Message   
+    </p></a></div>
+</div>
+{% endblock %}

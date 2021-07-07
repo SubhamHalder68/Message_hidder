@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+
+{% block title %}ENCRYPTION{% endblock %}
+
+{% block main %}
+    <style>
+        body {
+          background-image: url('static/index.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+        }
+    </style>
+    <h1>Encryption of messages:</h1>
+    <p>
+        <div class="container">
+            <div class="card-deck mb-3">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                  <h4 class="my-0 font-weight-normal text-center">Encryption:</h4>
+                </div>
+                <div class="card-body">
+                  <form action="{{ url_for('enc') }}" method="post">
+                    <label for="text">Enter Encrypted word:</label>
+                    <input type="text" class="form-control" name="message_en" id="code" value="" required>
+                    <br>
+                    <label for="text">Enter Orginal Message:</label>
+                    <input type="text" class="form-control" name="message_o" id="message" value="" required>
+                    <br>
+                    <label for="email">Enter Reciver email id:</label>
+                    <input type="email" class="form-control" name="email_id" id="email_id" value="" required>
+                    <br>
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">encrypt</button>
+                  </form>
+                </div>
+              </div>
+          
+            </div>
+          
+          
+          </div>
+    </p>
+
+{% endblock %}
